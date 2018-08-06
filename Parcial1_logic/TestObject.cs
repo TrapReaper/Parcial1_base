@@ -31,8 +31,28 @@ namespace Parcial1_logic
         public Queue<int> ReplaceInQueue(Queue<int> inputQueue, int lookupValue, int replaceValue)
         {
             //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
+            
 
-            return null;
+            int distancia = inputQueue.Count;
+            Queue<int> temp = new Queue<int>(distancia);
+
+            for (int i = 0; i< distancia; i++)
+            {
+                int tempValue = inputQueue.Dequeue();
+
+                if(tempValue == lookupValue)
+                {
+                    temp.Enqueue(replaceValue);
+                }
+                else
+                {
+                    temp.Enqueue(tempValue);
+                    
+                }
+            }
+
+
+            return temp;
         }
 
         /// <summary>
@@ -42,8 +62,15 @@ namespace Parcial1_logic
         /// <returns>Una pila con los valores de 'stack' invertidos</returns>
         public Stack<string> InverseStack(Stack<string> stack)
         {
+            int distancia = stack.Count;
+            Stack<string> temp = new Stack<string>();
+
+            for(int i =0; i<distancia; i++)
+            {
+                temp.Push(stack.Pop());
+            }
             //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
-            return null;
+            return temp;
         }
 
         /// <summary>
@@ -55,8 +82,27 @@ namespace Parcial1_logic
         /// <returns>Una lista con datos intercalados de 'stack' y 'queue'</returns>
         public List<string> MixData(Stack<string> stack, Queue<string> queue)
         {
+            int distancia1 = stack.Count;
+            int distancia2 = queue.Count;
+            int distancia;
+            List<string> temp = new List<string>();
+            if(distancia1 > distancia2)
+            {
+                distancia = distancia2;
+            }
+            else
+            {
+                distancia = distancia1;
+            }
+                       
+            for(int i=0; i<distancia; i++)
+            {
+                temp.Add(stack.Pop());
+                temp.Add(queue.Dequeue());
+            }
+            
             //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
-            return null;
+            return temp;
         }
 
         /// <summary>
@@ -69,7 +115,27 @@ namespace Parcial1_logic
         /// <returns></returns>
         public int RepeatedTimesInDictionary<Type1, Type2>(Dictionary<Type1, Type2> dict, Type2 lookupValue)
         {
-            return -1;
+            int cantidad = 0;
+            int distancia = dict.Count;
+            if (dict.ContainsValue(lookupValue))
+            {
+                foreach(var element in dict)
+                {
+                    cantidad++;
+                
+                }
+            }
+            else
+            {
+                return 0;
+            }
+
+
+           
+            
+    
+
+            return cantidad;
         }
 
         #endregion DATA_STRUCTURES

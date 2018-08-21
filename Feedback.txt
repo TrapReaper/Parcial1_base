@@ -1,0 +1,15 @@
+Feedback
+
+1. Estructuras de datos (1.88/2.5)
+ * Todas las pruebas corren exitosamente, excepto la de RepeatedTimesInDictionary()
+ * RepeatedTimesInDictionary() cuenta si existe el valor por la cantidad de elementos del diccionario, no las ocurrencias del valor como pide el enunciado.
+2. OOP (0.75/2.5)
+ * Muchas propiedades que, si bien pueden ir en un juego de este estilo, eran ajenas al enunciado, por lo que no pueden valorarse.
+ * NPC no es un Actor según el enunciado. La implementación lo pone como tal.
+ * Actor no implementa la interfaz ICharacter en la implementación.
+ * Ningún personaje de  la implementación podría moverse según pide el enunciado, pues le borraron el método a ICharacter.
+ * Hero no tiene método Equip() para equipar armas.
+ * Los métodos para acceder a ataque y defensa actuales no corresponden a los pedidos, y tampoco tienen en cuenta el enunciado: Se pidió un accesor, no un método que escribiera un atributo.
+ * Gear no tiene un limitador global para todas las instancias.
+
+Total: 2.63/5.0
